@@ -1,0 +1,41 @@
+.Board {
+	display: flex;
+	flex-direction: column;
+	border-radius: 10px;
+	padding: 2px;
+	box-shadow:
+		0 0 calc(.1*var(--size)) #000,
+		0 0 calc(.5*var(--size)) #fff;
+}
+
+.won {
+	color: white;
+	font-size: calc(2*var(--size));
+	letter-spacing: 2px;
+	text-shadow:
+		0 0 calc(1*var(--size)) white,
+		0 0 calc(2*var(--size)) white,
+		0 0 calc(4*var(--size)) white;
+	padding: 0 var(--size);
+}
+
+.pulse {
+	animation: pulse ease-in-out 1s infinite alternate;
+    transform-origin: center -40px;
+    float:left;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.pulse::after {
+  animation: pulse 2000ms infinite;
+}
+ 
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  95%, 96%, 96%, 97%, 100% {
+  	opacity: 1;
+  }
+}

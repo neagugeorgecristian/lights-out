@@ -1,0 +1,31 @@
+.title {
+	font-size: calc(var(--size));
+	letter-spacing: 2px;
+	margin-bottom: var(--size);
+}
+
+.orange {
+	color: var(--orange);
+	animation: flicker 1.2s infinite alternate;
+}
+
+.blue {
+	color: var(--blue);
+	text-shadow: 
+	0 0 calc(var(--size)) var(--blue),
+	0 0 calc(var(--size)*3) var(--blue),
+	0 0 calc(var(--size)*6) var(--blue);
+}
+
+@keyframes flicker {
+	0%, 18%, 23%, 27%, 53%, 57%, 100% {
+		text-shadow: 
+		0 0 calc(var(--size)) var(--orange),
+		0 0 calc(var(--size)*3) var(--orange),
+		0 0 calc(var(--size)*6) var(--orange);
+	}
+
+	20%, 24%, 55%, 78% {
+		text-shadow: none;
+	}
+}
